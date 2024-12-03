@@ -1,6 +1,4 @@
-import streamlit as st
 import requests
-from transformers import pipeline
 import streamlit as st
 from PIL import Image
 import os
