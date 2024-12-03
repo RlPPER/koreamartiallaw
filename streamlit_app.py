@@ -17,10 +17,10 @@ if uploaded_files:
     uploaded_images = [Image.open(file) for file in uploaded_files]
 
     # 사이드바에 랜덤 이미지 3개 표시
-    if len(uploaded_images) >= 3:
-        random_images = random.sample(uploaded_images, 3)  # 3개의 랜덤 이미지 선택
-        for image in random_images:
-            st.sidebar.image(image, caption="Random Image", use_column_width=True)
+    latest_images = uploaded_images[-3:]  # 업로드된 순서대로 마지막 3개 이미지
+    # 사이드바에 최신 3개 이미지 표시
+    for image in latest_images:
+        st.sidebar.image(image, caption="Latest Image", use_column_width=True)
     
     # 페이지네이션: 이미지 리스트와 페이지 정보 처리
     per_page = 15
