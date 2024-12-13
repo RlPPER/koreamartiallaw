@@ -4,8 +4,6 @@ import json
 import http.client
 import os
 from dotenv import load_dotenv
-from PIL import Image
-import io
 load_dotenv()
 client_id = os.environ.get('NAVER_CLIENT_ID')
 client_secret = os.environ.get('NAVER_CLIENT_SECRET')
@@ -51,7 +49,7 @@ def summarize_clova(text):
     # Summarization requests
     request_data = {
         "texts": [text],
-        "segMinSize": 700,
+        "segMinSize": 300,
         "includeAiFilters": True,
         "autoSentenceSplitter": True,
         "segCount": -1,
