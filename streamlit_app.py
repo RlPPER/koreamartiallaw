@@ -9,7 +9,7 @@ import io
 load_dotenv()
 client_id = os.environ.get('NAVER_CLIENT_ID')
 client_secret = os.environ.get('NAVER_CLIENT_SECRET')
-clova_url = os.environ.get('NAVER_URL')
+#clova_url = os.environ.get('NAVER_URL')
 # Translator 객체 생성
 # CompletionExecutor 클래스 정의
 class CompletionExecutor:
@@ -28,7 +28,7 @@ class CompletionExecutor:
         }
 
         conn = http.client.HTTPSConnection(self._host)
-        conn.request('POST', '/testapp/v1/api-tools/summarization/v2/{clova_url}', json.dumps(completion_request), headers)
+        conn.request('POST', '/testapp/v1/api-tools/summarization/v2/40b7767cc1d846e3bf2bde48ccb690a5', json.dumps(completion_request), headers)
         response = conn.getresponse()
         result = json.loads(response.read().decode(encoding='utf-8'))
         conn.close()
@@ -51,7 +51,7 @@ def summarize_clova(text):
     # Summarization requests
     request_data = {
         "texts": [text],
-        "segMinSize": 300,
+        "segMinSize": 700,
         "includeAiFilters": True,
         "autoSentenceSplitter": True,
         "segCount": -1,
@@ -114,7 +114,7 @@ def search_news(query="계엄", display=8):
         return []
 
 # Streamlit 애플리케이션
-st.title("What's happening in Korea? News and photos related to martial law")
+st.title("What's happening in Korea? News related to martial law")
 st.write("This website is intended to share news related to the declaration of martial law in South Korea on December 2, 2024 I want to raise awareness about the critical situation in South Korea. I'm urgently seeking help. If you can assist, please contact me at stormkingrank1@gmail.com.")
 # 검색 버튼 클릭 횟수 제한
 if 'search_count' not in st.session_state:
