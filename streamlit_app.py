@@ -1,5 +1,4 @@
 import streamlit as st
-<<<<<<< HEAD
 import requests
 import json
 import http.client
