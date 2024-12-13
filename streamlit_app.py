@@ -3,11 +3,12 @@ import requests
 import json
 import http.client
 import os
-from dotenv import load_dotenv
-load_dotenv()
-client_id = os.environ.get('NAVER_CLIENT_ID')
-client_secret = os.environ.get('NAVER_CLIENT_SECRET')
-#clova_url = os.environ.get('NAVER_URL')
+#from dotenv import load_dotenv
+#load_dotenv()
+client_id = st.secrets['NAVER_CLIENT_ID']
+#client_id = os.environ.get('NAVER_CLIENT_ID')
+client_secret = st.secrets['NAVER_CLIENT_SECRET']
+#client_secret = os.environ.get('NAVER_CLIENT_SECRET')
 # Translator 객체 생성
 # CompletionExecutor 클래스 정의
 class CompletionExecutor:
@@ -41,9 +42,12 @@ class CompletionExecutor:
 def summarize_clova(text):
     completion_executor = CompletionExecutor(
         host='clovastudio.apigw.ntruss.com',
-        api_key=os.environ.get('CLOVA_API_KEY'),
-        api_key_primary_val=os.environ.get('CLOVA_API_KEY_PRIMARY_VAL'),
-        request_id=os.environ.get('CLOVA_REQUEST_ID')
+        #api_key=os.environ.get('CLOVA_API_KEY'),
+        api_key = st.secrets['CLOVA_API_KEY'],
+        #api_key_primary_val=os.environ.get('CLOVA_API_KEY_PRIMARY_VAL'),
+        api_key_primary_val = st.secrets['CLOVA_API_KEY_PRIMARY_VAL'],
+        #request_id=os.environ.get('CLOVA_REQUEST_ID')
+        request_id = st.secrets['CLOVA_REQUEST_ID']
     )
 
     # Summarization requests
