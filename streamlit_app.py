@@ -113,7 +113,7 @@ def search_news(query="계엄", display=8):
 
 # Streamlit 애플리케이션
 st.title("What's happening in Korea? News related to martial law")
-st.write("This website is intended to share news related to the declaration of martial law in South Korea on December 2, 2024 I want to raise awareness about the critical situation in South Korea. I'm urgently seeking help. If you can assist, please contact me at stormkingrank1@gmail.com.")
+st.write("This website is intended to share news related to the declaration of martial law in South Korea on December 2, 2024 I want to raise awareness about the critical situation in South Korea. Contact : stormkingrank1@gmail.com.")
 # 검색 버튼 클릭 횟수 제한
 if 'search_count' not in st.session_state:
     st.session_state['search_count'] = 0
