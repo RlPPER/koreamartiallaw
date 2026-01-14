@@ -5,7 +5,7 @@ The people of South Korea and many members of the National Assembly are respondi
 That’s why I decided to create a free service to accurately inform people overseas about this crisis. Using AI, this service provides real-time summaries of news related to the martial law declaration from South Korea's largest portal site (The most widely used website in South Korea; NAVER) under its news category.
 Let South Korea show you that peace and love will always triumph over force. Thank you.
 
-How to access
+1. How to access
 
 https://koreamartiallaw.streamlit.app/
 
